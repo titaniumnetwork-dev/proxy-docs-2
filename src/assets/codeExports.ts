@@ -1,22 +1,4 @@
----
-title: Multiple proxies
-description: put whatever you want here ig
-sidebar: 
-    order: 1
----
-
-## Setting up Multiple Proxies
-
-If you want to have something where users can change a setting to swap what proxy does the proxying. There is multiple ways to do it.
-
-#### Single ServiceWorker
-
-Its possible to combine all of your proxies into 1 ServiceWorker. However if it is not done correctly, it can cause your entire proxy system to become broken. The way this functions is it checks the path you are requesting to, and determines the proxy to be used from there.
-A typical setup looks like this:
-
-*sw.js*
-```javascript
-importScripts('/dynamic/dynamic.config.js');
+export const singleSw = `importScripts('/dynamic/dynamic.config.js');
 importScripts('/dynamic/dynamic.worker.js');
 importScripts('dist/uv.bundle.js');
 importScripts('dist/uv.config.js');
@@ -43,16 +25,8 @@ self.addEventListener('fetch',
             })()
         );
     }
-);
-```
-The example above was found [here](https://github.com/NebulaServices/Dynamic/tree/main/docs/examples/uv-dynamic-multi).
-An example of a Proxy site that uses this system is [Nebula](https://https://nebulaproxy.io/)
-#### Many ServiceWorkers, 1 Register
-
-This system works like this, you have multiple proxies with each of them having their own ServiceWorker. What changes the Proxy is something like a LocalStorage variable. This is usually a safer method as long as the list is formatted correctly and all the information that it uses for it is correct. A typical setup looks like this: 
-
-*index.js*
-```javascript
+)`
+export const multipleSW = `
 const form = document.getElementById("uv-form");
 const address = document.getElementById("uv-address");
 const input = document.querySelector("input");
@@ -116,7 +90,7 @@ function search(input) {
   } catch (err) {
     // The input was not a valid URL; attempt to prepend 'http://'
     try {
-      const url = new URL(`http://${input}`);
+      const url = new URL(\`http://\${input}\`); 
       if (url.hostname.includes(".")) {
         return url.toString();
       }
@@ -127,32 +101,26 @@ function search(input) {
     }
   }
 }
-  if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.ready.then(async () => {
-      await setTransports()
-    })
-    navigator.serviceWorker.register(swFile, { scope: swConfigSettings.prefix })
-      .then( async (registration) => {
-        console.log('ServiceWorker registration successful with scope: ', registration.scope);
-        form.addEventListener('submit', async (event) => {
-          event.preventDefault();
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.ready.then(async () => {
+    await setTransports()
+  })
+  navigator.serviceWorker.register(swFile, { scope: swConfigSettings.prefix })
+    .then( async (registration) => {
+      console.log('ServiceWorker registration successful with scope: ', registration.scope);
+      form.addEventListener('submit', async (event) => {
+        event.preventDefault();
 
-          let encodedUrl = swConfigSettings.prefix + crypts.encode(search(address.value));
-          location.href = encodedUrl;
-        });
-      })
-      .catch((error) => {
-        console.error('ServiceWorker registration failed:', error);
+        let encodedUrl = swConfigSettings.prefix + crypts.encode(search(address.value));
+        location.href = encodedUrl;
       });
-  }
-```
-
-##### Ways to use the Many ServiceWorkers, 1 Register System with non-SW Proxies
-Usually if you want to use a non-SW proxy like [Rammerhead](/rh/gettingstarted) with this system, you'd have to use a if, then, else statement and do something like this:
-
-*index.js*
-```javascript
-const proxySetting = localStorage.getItem("proxy") ?? 'uv'; // Using nullish coalescing operator for default value
+    })
+    .catch((error) => {
+      console.error('ServiceWorker registration failed:', error);
+    });
+}
+`;
+export const multipleSW2 = `const proxySetting = localStorage.getItem("proxy") ?? 'uv'; // Using nullish coalescing operator for default value
 
 const swConfig = {
   'uv': { file: '/@/sw.js', config: __uv$config },
@@ -174,7 +142,7 @@ function search(input) {
   } catch (err) {
     // The input was not a valid URL; attempt to prepend 'http://'
     try {
-      const url = new URL(`http://${input}`);
+      const url = new URL(\`http://\${input}\`
       if (url.hostname.includes(".")) {
         return url.toString();
       }
@@ -195,6 +163,4 @@ if (localStorage.getItem("proxy") === "rammerhead") {
 } else {
   //Use the normal version of this system in here
 }
-```
-
-This method and example was made by [Night Network](https://discord.night-x.com). An example Proxy that uses an advanced version of this system is [Light](https://lightgo.app)
+`

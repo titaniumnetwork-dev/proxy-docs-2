@@ -1,0 +1,43 @@
+---
+title: Multiple proxies
+description: put whatever you want here ig
+sidebar: 
+    order: 1
+  
+
+---
+import { Code } from '@astrojs/starlight/components';
+import { singleSw, multipleSW, multipleSW2 } from "./src/assets/codeExports.ts"
+
+
+## Setting up Multiple Proxies
+
+If you want to have something where users can change a setting to swap what proxy does the proxying. There is multiple ways to do it.
+
+#### Single ServiceWorker
+
+Its possible to combine all of your proxies into 1 ServiceWorker. However if it is not done correctly, it can cause your entire proxy system to become broken. The way this functions is it checks the path you are requesting to, and determines the proxy to be used from there.
+A typical setup looks like this:
+
+
+
+<Code code={singleSw} lang="js" title="sw.js">
+</Code>
+
+The example above was found [here](https://github.com/NebulaServices/Dynamic/tree/main/docs/examples/uv-dynamic-multi).
+An example of a Proxy site that uses this system is [Nebula](https://nebulaproxy.io/)
+#### Many ServiceWorkers, 1 Register
+
+This system works like this, you have multiple proxies with each of them having their own ServiceWorker. What changes the Proxy is something like a LocalStorage variable. This is usually a safer method as long as the list is formatted correctly and all the information that it uses for it is correct. A typical setup looks like this: 
+
+<Code code={multipleSW} lang="js" title="index.js">
+</Code>
+
+##### Ways to use the Many ServiceWorkers, 1 Register System with non-SW Proxies
+Usually if you want to use a non-SW proxy like [Rammerhead](/rh/gettingstarted) with this system, you'd have to use a if, then, else statement and do something like this:
+
+
+<Code code={multipleSW2} lang="js" title="index.js">
+</Code>
+
+This method and example was made by [Night Network](https://discord.night-x.com). An example Proxy that uses an advanced version of this system is [Light](https://lightgo.app)

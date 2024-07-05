@@ -7,7 +7,7 @@ export default defineConfig({
 		starlight({
 			title: 'Titanium Network // Documentation',
 			social: {
-				github: 'https://github.com/titaniumnetwork-dev/proxy-docs-2',
+				github: 'https://github.com/titaniumnetwork-dev/',
 				discord: 'https://discord.gg/unblock',
 				youtube: 'https://www.youtube.com/channel/UC6LaREFvs9L72SK1s2PcxNg',
 				twitter: 'https://twitter.com/titaniumnetdev'

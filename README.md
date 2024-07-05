@@ -49,3 +49,4 @@ These are the new docs on the modern proxies.
 - SSD
 - [LINUXTERM/ENDLESSVORTEX/WHATEVER](https://github.com/)
 - [SUSSHI](https://github.com/e9x)
+- [KDust7](https://github.com/KDust7)
