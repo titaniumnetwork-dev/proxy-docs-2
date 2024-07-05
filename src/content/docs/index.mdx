@@ -1,0 +1,142 @@
+---
+title: Welcome
+description: TitaniumNetwork's official documentation
+
+---
+
+# Titanium Network | SDK Documentation
+
+The official documentation for Titanium Network, an organization dedicated to providing services related to bypassing internet censorship. Our projects expect to provide users, and itself, with a less restrictive browsing experience. Here we provide advanced web proxy services through the progression of web proxy technologies.
+
+These projects compose from advanced URL rewriting proxies, webOS projects, web-based emulation built from libretro, kajigs (a repository of device/OS exploits) and also web browser experimentations with service-workers.
+As a result a wide variety of sites are supported, speed is prioritized and resource consumption has also been significantly optimized compared to previous technologies.
+
+<img width="700px" src="https://raw.githubusercontent.com/titaniumnetwork-dev/Oxide/master/public/banner.png"></img>
+
+### About
+Founded in 2016, Titanium Network is an organization dedicated to providing services related to bypassing internet censorship. Our projects expect to provide users, and itself, with a less restrictive browsing experience.
+
+For this Titanium Network prioritizes the production and improvement of web proxy technologies such as Ultraviolet, Corrosion, etc. and the affilation with various branched projects like Rammerhead, TOMP and formally Womginx from contributors.
+
+Our Discord has almost 30,000 members, and Titanium Network's services actively maintain well over 5 million users per month.
+
+## Getting Started
+
+### Unblocking
+
+You simply need to use a site that hosts Ultraviolet, the web proxy project maintained by Titanium Network or the other various web proxy projects. Simply join the Titanium Network discord server and enter in the proxy command in the #proxy channel to obtain a restocked URL.
+
+With this resource you are able to unblock websites on a website in plain terms. The best part about web proxies or a project in Titanium Network is that even after being blocked there are always new URLs or links. You can't block them all. Sites such as Discord and all are supported on it.
+
+#### Or self-host for full privacy control!!
+
+### Obtaining Links
+Join the TN discord server at: https://discord.gg/unblock
+
+Type out `/proxy` in the #proxy channel and our discord bot will direct message you a link. You can do this three/nine times per month and we restock these links every month to make sure they remain unblocked!
+
+## Proxies
+### [Ultraviolet](/uv/gettingstarted)
+
+<img align="right" width="200px" src="https://raw.githubusercontent.com/titaniumnetwork-dev/Ultraviolet-Static/main/public/uv.png"></img>
+
+- Highly sophisticated proxy used for evading internet censorship or accessing websites in a controlled sandbox using the power of service-workers.
+
+Starting from v2, Ultraviolet only supports Bare servers v3+.
+
+If you operate an outdated Bare server, we encourage you to update. If you're using an outdated Bare server, we encourage you to find an updated Bare server or host your own.
+
+If you're too lazy to do either of the above, you can install an outdated and unsupported version of Ultraviolet.
+
+```
+npm install @titaniumnetwork-dev/ultraviolet@1
+```
+
+### [TompHTTP](/protocols/bare/)
+
+#### NOTE: Our standards are currently being reworked with a much newer project to address past issues.
+
+- TOMP (acronym for Too Many Proxies) is an organization containing new standards and implementations for web proxies built on Service Workers.
+
+## Open Source Projects
+
+Titanium Network is composed of various open-source projects hosted in production. Being open source in nature, users can self-host any of these official projects for their privacy control.
+
+- [Anura OS](https://anura.pro/)
+- [Holy Unblocker](https://holyubofficial.net/)
+- [Nebula](https://nebulaproxy.io/)
+- [Kazwire](https://kazwire.com/)
+- [Ludicrous](https://ludicrous.icu/)
+- [Radon Games](https://radon.games/)
+- [TotallyScience](https://totallyscience.co/)
+
+<img width="700px" src="https://raw.githubusercontent.com/titaniumnetwork-dev/Oxide/master/public/image.png"></img>
+
+### Documentation
+[Here](category/services) is a quick overview if you wish to setup an open-source project from Titanium Network on your own web server or just general SDK information in simple breakdowns.
+
+## Guides
+
+### Competitive Search Engine Optimization
+- [SEO](guides/seo-guide)
+
+---
+### VPS Hosting (2024 Updated)
+- [VPS Hosting](guides/vps-hosting)
+
+---
+### SSL Guide
+- [SSL/TLS w LetsEncrypt](guides/ssl-guide)
+
+---
+### DNS Setup
+- [DNS Setup](guides/dns-setup)
+
+---
+### NGINX Setup
+- [Web Server Setup w/ NGINX](guides/nginx)
+
+---
+The contents below are WIP tutorials.
+
+- [Filter Focus](guides/filter-optimization) \*
+- [VPN Setup](guides/vpn-setup)
+
+Mark indicates the documentation page is a work-in-progress. Feel free to submit any pull requests to update pages correctly.
+
+## Contributing
+
+If you wish to contribute please check out the Contributions section or commit to the GitHub!
+Authors can be found on the GitHub as well.
+
+## License
+
+Here is the general licence for all TitaniumNetwork projects! This varies from MIT to GNU AFFERO.
+
+https://gnu.org/licenses/agpl-3.0.html
+
+## TODO (for contributions)
+
+- Kajig docs
+- Filter focus pages
+- Detailed web proxy practices for production hosting
+
+
+import { Card, CardGrid } from '@astrojs/starlight/components';
+
+## Next steps
+
+<CardGrid stagger>
+	<Card title="Update content" icon="pencil">
+		Edit `src/content/docs/index.mdx` to see this page change.
+	</Card>
+	<Card title="Add new content" icon="add-document">
+		Add Markdown or MDX files to `src/content/docs` to create new pages.
+	</Card>
+	<Card title="Configure your site" icon="setting">
+		Edit your `sidebar` and other config in `astro.config.mjs`.
+	</Card>
+	<Card title="Read the docs" icon="open-book">
+		Learn more in [the Starlight Docs](https://starlight.astro.build/).
+	</Card>
+</CardGrid>

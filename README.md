@@ -28,7 +28,7 @@ These are the new docs on the modern proxies.
 - [Mercury Workshop](https://github.com/MercuryWorkshop)
 - [Tomp Web Proxies (tomphttp)](https://github.com/tomphttp)
 - [Rammerhead](https://github.com/binary-person/rammerhead)
-#### Old/Discontinued
+#### Inactive
 - [Ultraviolet v1](https://github.com/titaniumnetwork-dev/UV-OLD)
 - [Womginx](https://github.com/binary-person/womginx)
 - [Corrosion](https://github.com/titaniumnetwork-dev/Corrosion)

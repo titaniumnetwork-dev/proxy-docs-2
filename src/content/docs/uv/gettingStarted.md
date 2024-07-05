@@ -1,0 +1,130 @@
+---
+title: Getting started with Ultraviolet
+description: Basic information on setting up Ultraviolet
+sidebar:
+    order: 1
+---
+
+<img width="200px" align="right" src="https://raw.githubusercontent.com/titaniumnetwork-dev/Ultraviolet-Static/main/public/uv.png" height="250"></img>
+
+Ultraviolet is a highly advanced web proxy used for evading internet censorship or accessing websites in a controlled sandbox. It is designed with security and performance in mind. Ultraviolet intercepts HTTP requests with a service worker, while adhering to the while using [libcurl.js](https://github.com/ading2210/libcurl.js) or [epoxy-tls](https://github.com/MercuryWorkshop/epoxy-tls) with [Wisp](https://github.com/MercuryWorkshop/wisp-protocol) and is a leader in innovative web proxy technologies.
+
+## Features
+
+Ultraviolet offers several features that set it apart from its predecessors, including CAPTCHA and hCAPTCHA support, URL encoding settings for added security, full end to send encryption, client-side configuration via service-workers, high speed compared to other web proxies, blacklist settings and more for easy hosting, leak prevention, regular updates, and improved resource usage and speed for better setups with a dedicated server instance.
+
+## Supported Sites
+
+Some of the popular websites that Ultraviolet supports include:
+
+-   [Google](https://google.com)
+-   [Youtube](https://www.youtube.com)
+-   [Spotify](https://spotify.com)
+-   [Discord](https://discord.com)
+-   [Reddit](https://reddit.com)
+-   [GeForce NOW](https://play.geforcenow.com/)
+-   [now.gg](https://now.gg)
+
+## Used by
+
+-   [Holy Unblocker](https://github.com/holy-unblocker/website)
+-   [Hypertabs](https://hypertabs.cc/)
+-   [Terbium](https://github.com/TerbiumOS/webOS)
+-   [Incognito](https://github.com/caracal-js/Incognito)
+-   [Nebula](https://github.com/NebulaServices/Nebula)
+-   [Noctura](https://github.com/NebulaServices/Noctura)
+-   [Metallic](https://github.com/Metallic-Web/Metallic)
+
+## Upgrading
+
+A guide for updating from v2 to v3 can be found [here](https://github.com/titaniumnetwork-dev/Ultraviolet/wiki/Upgrading).
+
+## Older Bare servers
+
+Starting from v2, Ultraviolet only supports Bare servers v3+.
+
+If you operate an outdated Bare server, we encourage you to update. If you're using an outdated Bare server, we encourage you to find an updated Bare server or host your own.
+
+If you're too lazy to do either of the above, you can install an outdated and unsupported version of Ultraviolet.
+
+```sh
+npm install @titaniumnetwork-dev/ultraviolet@1
+```
+
+## Deployment
+
+This repository can be built, but it can't be deployed to any services. See [Ultraviolet-App](https://github.com/titaniumnetwork-dev/Ultraviolet-App) for a complete and customizable Ultraviolet setup that you can deploy.
+
+## Documentation
+
+Documentation can be found in the [wiki](https://github.com/titaniumnetwork-dev/Ultraviolet/wiki).
+
+## Building
+
+1. Clone the repository
+
+```sh
+$ git clone https://github.com/titaniumnetwork-dev/Ultraviolet.git
+> Cloning into Ultraviolet...
+$ cd Ultraviolet
+```
+
+2. Install dependencies
+
+```sh
+$ npm install
+```
+
+3. Produce the `dist/` directory and compile scripts
+
+```sh
+$ npm run build
+```
+
+### I don't care about building, where are the scripts for my website?!
+
+You can extract the scripts from the NPM package in the [releases section](https://github.com/titaniumnetwork-dev/Ultraviolet/releases). All the scripts you would typically look for (`uv.bundle.js`, `uv.handler.js`, `uv.sw.js`, and `uv.config.js`) are found within the `dist` directory.
+
+## Installation
+
+> This will provide built files and the JS API to access the path of dist files.
+
+Currently, we don't have an NPM package. As a current solution, you can install from a [GitHub release](https://github.com/titaniumnetwork-dev/Ultraviolet/releases). Copy the link to the `.tgz` and install using NPM.
+
+````sh
+$ npm install https://github.com/titaniumnetwork-dev/Ultraviolet/releases/download/v1.0.1/ultraviolet-1.0.1.tgz
+
+## Packaging
+
+This is intended for releasing on hosting the package as a file, not on NPM.
+
+```sh
+$ npm pack
+````
+
+Package will be named `ultraviolet-X.X.X.tgz`
+
+## Deployment
+
+<p align="center">
+  <img
+    src="https://raw.githubusercontent.com/titaniumnetwork-dev/Ultraviolet-Static/main/public/uv.png"
+    height="200"
+  ></img>
+</p>
+
+<h1 align="center">Ultraviolet-Node</h1>
+
+The deployable all-in-one bundle for Ultraviolet, a highly sophisticated proxy used for evading internet censorship or accessing websites in a controlled sandbox using the power of service-workers and more!
+
+## Deployment
+
+[![Deploy to Heroku](https://binbashbanana.github.io/deploy-buttons/buttons/remade/heroku.svg)](https://github.com/titaniumnetwork-dev/Ultraviolet-Node/wiki/Deploy-to-Heroku)
+[![Run on Replit](https://binbashbanana.github.io/deploy-buttons/buttons/remade/replit.svg)](https://github.com/titaniumnetwork-dev/Ultraviolet-Node/wiki/Run-on-Replit)
+[![Deploy on Railway](https://binbashbanana.github.io/deploy-buttons/buttons/remade/railway.svg)](https://github.com/titaniumnetwork-dev/Ultraviolet-Node/wiki/Deploy-on-Railway)
+[![Remix on Glitch](https://binbashbanana.github.io/deploy-buttons/buttons/remade/glitch.svg)](https://github.com/titaniumnetwork-dev/Ultraviolet-Node/wiki/Remix-on-Glitch)
+[![Deploy to Koyeb](https://binbashbanana.github.io/deploy-buttons/buttons/remade/koyeb.svg)](https://github.com/titaniumnetwork-dev/Ultraviolet-Node/wiki/Deploy-to-Koyeb)
+
+If you are deploying to an alternative service or to a server, refer to [Deploy via terminal](https://github.com/titaniumnetwork-dev/Ultraviolet-Node/wiki/Deploy-via-terminal).
+
+Additional information such as [customizing your frontend](https://github.com/titaniumnetwork-dev/Ultraviolet-Node/wiki/Customizing-your-frontend) can be found on the [wiki](https://github.com/titaniumnetwork-dev/Ultraviolet-Node/wiki).
